@@ -7,7 +7,7 @@ def save(catalog, filename):
     items_list = []
     for item in catalog:
         info = {
-            'item_id': item.item.id,
+            'item_id': item.item_id,
             'title': item.title,
             'category': item.category,
             'year': item.year,
