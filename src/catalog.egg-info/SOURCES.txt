@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/catalog/__init__.py
+src/catalog/__main__.py
+src/catalog/catalog.py
+src/catalog/errors.py
+src/catalog/models.py
+src/catalog/storage.py
+src/catalog.egg-info/PKG-INFO
+src/catalog.egg-info/SOURCES.txt
+src/catalog.egg-info/dependency_links.txt
+src/catalog.egg-info/top_level.txt
+tests/test_catalog.py
+tests/test_models.py
+tests/test_storage.py
