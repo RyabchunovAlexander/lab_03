@@ -3,6 +3,7 @@ from .errors import InvalidItemError
 
 @dataclass
 class MediaItem:
+    """Модель медиафайла с проверкой данных."""
     item_id: str
     title: str
     category: str
