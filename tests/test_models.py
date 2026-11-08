@@ -40,7 +40,7 @@ def test_empty_title():
 
 
 def test_empty_category():
-    """Пустой автор должен вызывать ошибку."""
+    """Пустая категория должна вызывать ошибку."""
     with pytest.raises(InvalidItemError):
         MediaItem('1', 'Ирония судьбы', '', 1975, 'Эльдар Рязанов', 184)
 
@@ -52,12 +52,12 @@ def test_empty_author():
 
 
 def test_incorrect_year():
-    """Год выпуска не может быть из будущуго."""
+    """Год выпуска не может быть из будущего."""
     with pytest.raises(InvalidItemError):
         MediaItem('1', 'Ирония судьбы', 'Фильм', 2100, 'Эльдар Рязанов', 184)
 
 
 def test_incorrect_duration():
-    """Длительность не ожет быть отрицательной."""
+    """Длительность не может быть отрицательной."""
     with pytest.raises(InvalidItemError):
         MediaItem('1', 'Ирония судьбы', 'Фильм', 1975, 'Эльдар Рязанов', -184)
