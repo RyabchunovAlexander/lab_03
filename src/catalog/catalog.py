@@ -1,5 +1,6 @@
 from .errors import DuplicateIdError, NotFoundError
 
+
 class Catalog:
     """Класс для управления коллекцией медиафайлов."""
 

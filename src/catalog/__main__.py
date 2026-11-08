@@ -1,7 +1,8 @@
 from .catalog import Catalog
 from .errors import InvalidItemError
 from .models import MediaItem
-from .storage import save, load
+from .storage import load, save
+
 
 def main():
     """Запускает демонстрационный сценарий."""

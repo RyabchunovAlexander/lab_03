@@ -1,6 +1,8 @@
 import json
+
 from .errors import CorruptedFileError, FormatError
 from .models import MediaItem
+
 
 def save(catalog, filename):
     """Сохраняет каталог в JSON-файл."""
