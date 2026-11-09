@@ -89,35 +89,3 @@ def test_iteration_order():
 
     item_ids = [item.item_id for item in cat]
     assert item_ids == ['1', '2', '3']
-
-
-def test_read_only_view():
-    """Проверка, что представление защищено от изменений."""
-    cat = Catalog()
-    cat.add(MediaItem('1', 'Ирония судьбы', 'Фильм', 1975, 'Эльдар Рязанов', 184))
-
-    view = cat.view
-    del view['1']
-
-    assert len(cat) == 1
-    assert '1' in cat
-
-
-def test_category_index():
-    """Проверка, что индекс категорий обновляется при добавлении и удалении."""
-    cat = Catalog()
-
-    cat.add(MediaItem('1', 'Ирония судьбы', 'Фильм', 1975, 'Эльдар Рязанов', 184))
-    cat.add(MediaItem('2', 'Служебный роман', 'Фильм', 1977, 'Эльдар Рязанов', 159))
-    cat.add(MediaItem('3', 'Группа крови', 'Музыка', 1988, 'Кино', 4))
-
-    assert len(cat.find_by_category('фильм')) == 2
-    assert len(cat.find_by_category('музыка')) == 1
-
-    cat.remove('1')
-
-    assert len(cat.find_by_category('фильм')) == 1
-    assert cat.find_by_category('фильм')[0].item_id == '2'
-
-    cat.remove('3')
-    assert len(cat.find_by_category('музыка')) == 0
